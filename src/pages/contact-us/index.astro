@@ -1,0 +1,42 @@
+---
+import Base from '../../layouts/Base.astro';
+import PageHero from '../../components/PageHero.astro';
+import ContactForm from '../../components/ContactForm.astro';
+import VisitUs from '../../components/VisitUs.astro';
+import { contact } from '../../data/site';
+---
+<Base
+  title="Contact Kite Media Digital Marketing - 435-753-7553"
+  description="Get in touch with Kite Media to help your business grow an online presence through digital marketing including web design, SEO, and PPC."
+>
+  <PageHero title="Get in Touch">
+    <p class="call">Call/Text:</p>
+    <a class="phone" href={contact.phoneHref}>435-753-7553</a>
+  </PageHero>
+
+  <section class="section">
+    <div class="container split contact">
+      <div class="dark-card">
+        <h2>Send a Message</h2>
+        <ContactForm />
+      </div>
+      <div>
+        <blockquote class="note">We're a team of creative, hard-working professionals dedicated to bringing you effective &amp; successful digital marketing campaigns and awesomely designed websites. We work with small businesses and national brands alike, and serve clients throughout the United States &amp; Canada. We push ourselves to be constantly improving &amp; we're eager to show you what that looks like. Please get in touch and let's discuss your business and how we can help. We look forward to hearing from you!</blockquote>
+        <div class="media"><img src="/images/2025/10/Kite-Media-Website-Design-Digital-Marketing-Services.webp" alt="A Kite Media team member at his computer" loading="lazy" /></div>
+      </div>
+    </div>
+  </section>
+
+  <VisitUs />
+</Base>
+
+<style>
+  .call { margin-top: var(--s-6); font-size: var(--step-1); color: var(--on-dark); margin-bottom: 0; }
+  .phone { font-family: var(--font-display); font-size: var(--step-4); line-height: 1; color: #fff; text-decoration: none; }
+  .phone:hover { color: var(--sky); }
+  .contact { align-items: start; }
+  .dark-card { padding: var(--s-7) var(--s-6); background: var(--midnight); color: var(--on-dark); border-radius: var(--radius); }
+  .dark-card h2 { font-size: var(--step-3); color: #fff; margin-bottom: var(--s-5); }
+  .dark-card :global(.btn::after) { border-color: var(--sky); }
+  .note { margin: 0 0 var(--s-6); padding-left: var(--s-5); border-left: 4px solid var(--blue); font-size: var(--step-1); line-height: 1.6; }
+</style>

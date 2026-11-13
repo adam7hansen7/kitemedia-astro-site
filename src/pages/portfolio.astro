@@ -1,0 +1,56 @@
+---
+import Base from '../layouts/Base.astro';
+import PageHero from '../components/PageHero.astro';
+import ProjectCard from '../components/ProjectCard.astro';
+import portfolio from '../data/portfolio.json';
+
+const counts = new Map<string, number>();
+portfolio.forEach((p) => p.tags.forEach((t) => counts.set(t, (counts.get(t) ?? 0) + 1)));
+const filters = [...counts.entries()].sort((a, b) => a[0].localeCompare(b[0]));
+---
+<Base
+  title="Kite Media Work Portfolio - Marketing & Website Design"
+  description="Take a look to see how our website design and digital marketing services have helped all types of businesses. Let's talk: 435-753-7553."
+>
+  <PageHero title="Our Work" />
+
+  <section class="section">
+    <div class="container">
+      <div class="filters" role="group" aria-label="Filter projects">
+        <button type="button" class="filter" aria-pressed="true" data-filter="">All <span>{portfolio.length}</span></button>
+        {filters.map(([name, n]) => (
+          <button type="button" class="filter" aria-pressed="false" data-filter={name}>{name} <span>{n}</span></button>
+        ))}
+      </div>
+      <ul class="projects">
+        {portfolio.map((p, i) => <li><ProjectCard {...p} eager={i < 6} /></li>)}
+      </ul>
+    </div>
+  </section>
+</Base>
+
+<style>
+  .filters { display: flex; flex-wrap: wrap; gap: var(--s-2); margin-bottom: var(--s-7); }
+  .filter { padding: var(--s-2) var(--s-4); font: inherit; font-weight: 600; font-size: 0.95rem; color: var(--ink); background: #fff; border: 1px solid var(--line); border-radius: 999px; cursor: pointer; }
+  .filter span { color: var(--slate); font-weight: 400; margin-left: 2px; }
+  .filter:hover { border-color: var(--blue); }
+  .filter[aria-pressed='true'] { background: var(--midnight); border-color: var(--midnight); color: #fff; }
+  .filter[aria-pressed='true'] span { color: var(--on-dark-muted); }
+  .projects { display: grid; gap: var(--s-7) var(--s-5); grid-template-columns: repeat(auto-fill, minmax(min(100%, 280px), 1fr)); margin: 0; padding: 0; list-style: none; }
+  .projects li[hidden] { display: none; }
+</style>
+
+<script>
+  const buttons = document.querySelectorAll<HTMLButtonElement>('[data-filter]');
+  const items = document.querySelectorAll<HTMLLIElement>('.projects > li');
+  buttons.forEach((b) =>
+    b.addEventListener('click', () => {
+      const f = b.dataset.filter!;
+      buttons.forEach((x) => x.setAttribute('aria-pressed', String(x === b)));
+      items.forEach((li) => {
+        const tags = (li.querySelector<HTMLElement>('[data-tags]')?.dataset.tags ?? '').split('|');
+        li.hidden = !!f && !tags.includes(f);
+      });
+    }),
+  );
+</script>

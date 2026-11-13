@@ -1,0 +1,14 @@
+---
+import Brush from './Brush.astro';
+interface Props { title: string; kicker?: string; lede?: string; wide?: boolean }
+const { title, kicker, lede, wide = false } = Astro.props;
+---
+<section class="page-hero blueprint">
+  <div class="container">
+    {kicker && <span class="kicker">{kicker}</span>}
+    <h1 style={wide ? 'max-width: 20ch' : undefined}>{title}</h1>
+    <Brush />
+    {lede && <p class="lede">{lede}</p>}
+    <slot />
+  </div>
+</section>

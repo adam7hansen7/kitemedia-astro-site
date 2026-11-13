@@ -1,0 +1,189 @@
+---
+import Base from '../layouts/Base.astro';
+import Brush from '../components/Brush.astro';
+import Faq from '../components/Faq.astro';
+import ContactSection from '../components/ContactSection.astro';
+import VisitUs from '../components/VisitUs.astro';
+import faq from '../data/faq.json';
+import pageTestimonials from '../data/page-testimonials.json';
+
+const rotating = ['Digital Marketing', 'Web Design', 'Local SEO', 'Pay-Per-Click'];
+
+const services = [
+  {
+    title: 'Website Design & Maintenance',
+    href: '/services/website-design/',
+    text: 'We build WordPress websites for businesses large and small, combining great design with seamless functionality to create sites that not only look great, but work the way they should. Our forte is clean, modern, and highly functional informational websites tailored to your business, goals, and budget. We work with you in a collaborative effort to create a user-friendly site that clearly communicates your business and makes it easy for visitors to take action. We also build with the future in mind - so your website is easy to maintain and can evolve over time without requiring a teardown or re-start. And when you need updates - whether it’s new text, photos, videos, design changes or landing page additions - we’ve got you covered.',
+  },
+  {
+    title: 'Local Search Engine Optimization',
+    href: '/services/search-engine-optimization/',
+    text: 'We help small to medium sized service businesses rank within local search results. The goal of our SEO service is to make your business – your website & Google Business Profile – visible online. We do this with a combined focus on AI, search engines, and your potential customers. Through website optimization and content creation, link building, Google Business Profile optimization, local listing optimization, and more, we will work to push your business to the top of search results at the local level. SEO takes time to produce results, but is a crucial element to establishing an online presence for any business. If you want your website to show up higher and more frequently in local searches, SEO is the solution you need.',
+  },
+  {
+    title: 'Pay-Per-Click Advertising',
+    href: '/services/pay-per-click/',
+    text: 'We create targeted Google Ads campaigns for our clients through pay-per-click (PPC) advertising. PPC is one of the quickest ways to generate new leads and grow your business. Ads appear within Google search results by default, but additional channels such as Display Ads (ads that appear on other websites), remarketing (ads targeted to those who have visited your website in the past), and YouTube video ads are great tools. In addition, Google Local Service ads are an amazing pay-per-lead (you only get charged when customers actually call) option for most service businesses. PPC is highly targeted, flexible, trackable and can be catered to a wide range of budgets, making it a strong choice for most businesses.',
+  },
+  {
+    title: 'Social Media Advertising',
+    href: '/services/',
+    text: 'Our social media advertising service is built around the Meta Ads platform – Facebook and Instagram ads – with the ability to create targeted ads that will be seen at the local level. Social media ads are a great way to get in front of potential customers that need your services but may not be actively looking yet. We offer flexible service options, including one-time setups as well as the option for ongoing ad management and support.',
+  },
+  {
+    title: 'Graphic Design',
+    href: '/services/',
+    text: "We specialize in marketing and promotional graphic design services for both print and the web, meaning we'll make your brand look great on paper and online. This service is geared toward companies that already have an established brand identity - logos, color schemes, and general branding that we can utilize to create promotional designs. We can help your business by designing social media graphics, sales sheets, ad design, website graphics, flyer design, brochures, stickers, business cards, banners, catalogs, and more.",
+  },
+  {
+    title: 'Content Creation',
+    href: '/services/',
+    text: 'We offer content creation services to help your brand stand out and connect with your customers. From photography and video production to video editing and copywriting, we create content that gives your customers a view into your business. Whether you need visuals for your website, social media, or marketing campaigns, we focus on highlighting your business and services in a way that builds trust and drives engagement. Our goal is to deliver content that feels authentic to your brand, captures attention, and supports your overall marketing efforts.',
+  },
+];
+
+const testimonials = pageTestimonials.home;
+
+const localBusiness = {
+  '@context': 'https://schema.org',
+  '@type': 'ProfessionalService',
+  name: 'Kite Media',
+  url: 'https://www.kitemedia.com/',
+  telephone: '+1-435-753-7553',
+  email: 'info@kitemedia.com',
+  image: 'https://www.kitemedia.com/images/2022/12/Kite-Media-Digital-Marketing-Team.webp',
+  address: { '@type': 'PostalAddress', streetAddress: '24 S. Main St.', addressLocality: 'Logan', addressRegion: 'UT', postalCode: '84321', addressCountry: 'US' },
+};
+---
+<Base
+  title="Kite Media Digital Marketing & Web Design Services in Logan, Utah"
+  description="We provide small businesses with local SEO, pay-per-click advertising (PPC), web design & marketing services in Logan, UT. Call 435-753-7553."
+>
+  <script slot="head" type="application/ld+json" set:html={JSON.stringify(localBusiness)} />
+
+  <!-- Hero -->
+  <section class="hero blueprint">
+    <div class="container hero-inner">
+      <h1>
+        <span class="rotator">
+          {rotating.map((w, i) => <span class="word" style={`--i:${i}`}>{w}</span>)}
+        </span>
+        <span class="fixed">For Service Businesses</span>
+      </h1>
+      <Brush class="brush hero-brush" />
+      <div class="btn-row"><a class="btn" href="#contact">Let's Talk</a></div>
+    </div>
+  </section>
+
+  <!-- What we do -->
+  <section class="section" id="services">
+    <div class="container">
+      <div class="intro">
+        <div>
+          <span class="kicker">Our Services</span>
+          <h2>What We Do</h2>
+        </div>
+        <p class="lede"><strong>We provide locally targeted digital marketing for service-based small businesses.</strong> We work in three core areas - web design, local search engine optimization (SEO), and pay-per-click advertising (PPC). To sum it up, we help businesses become visible online so that potential customers searching for their services in their local area can find them. We only work with businesses that are the right fit and we won't push you into services you don’t need. Based in Logan, Utah, we work with businesses throughout the United States and Canada. We love working with local small businesses here in Utah, but can provide our services for companies located anywhere. Get in touch &amp; let's see what our team here at Kite Media can do for your company.</p>
+      </div>
+
+      <div class="services">
+        {services.map((s) => (
+          <article class="service">
+            <h3>{s.title}</h3>
+            <p>{s.text}</p>
+            <a class="text-link" href={s.href}>Learn more ⟶<span class="visually-hidden"> about {s.title}</span></a>
+          </article>
+        ))}
+      </div>
+      <div class="btn-row"><a class="btn" href="#contact">Contact Us</a></div>
+    </div>
+  </section>
+
+  <!-- Who we are -->
+  <section class="section section--dark who">
+    <div class="container split">
+      <div class="media who-photo">
+        <img src="/images/2022/12/Kite-Media-Digital-Marketing-Team.webp" alt="The Kite Media team" width="1920" height="1280" loading="lazy" />
+      </div>
+      <div>
+        <span class="kicker">Who We Are</span>
+        <h2>What We're All About</h2>
+        <div class="values">
+          <p><strong>Keeping it real.</strong> We take pride in being honest, up-front and real with our clients. If we’re not a good fit for your business, or if we just don’t have the capacity to take on your project, we’ll let you know. Simply put, we’ll never push you into a service you don’t need and we won’t accept any projects that we aren't confident we can deliver on.</p>
+          <p><strong>Quality + quantity.</strong> We aim to find the right balance of quality + quantity in the work that we do. We believe that success is in the details and will cater our services to your specific needs with just the right balance of quality + quantity.</p>
+          <p><strong>No strings attached.</strong> Stick with us because you're getting great results, not because you're locked into a contract. You’re free to cancel anytime – no term commitments, no cancellation fees. In our opinion, that’s the best way to show you how confident we are in our services. The great results you see and the positive experience working with our team should keep our working relationship going, not a contract.</p>
+        </div>
+        <div class="btn-row"><a class="btn" href="/about-us/">Learn More</a></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section class="section section--mist">
+    <div class="container">
+      <div class="heading-block">
+        <span class="kicker">Our Clients</span>
+        <h2>What People Are Saying</h2>
+      </div>
+      <div class="quotes">
+        {testimonials.map((t) => (
+          <figure class="quote">
+            <blockquote><p>“{t.quote}”</p></blockquote>
+            <figcaption>
+              {t.photo && <img class="photo" src={t.photo} alt="" width="64" height="64" loading="lazy" />}
+              <span class="who-name">- {t.author}</span>
+              {t.logo && <img class="logo" src={t.logo} alt="" height="40" loading="lazy" />}
+            </figcaption>
+          </figure>
+        ))}
+      </div>
+      <div class="btn-row"><a class="btn" href="/reviews/">Read More</a></div>
+    </div>
+  </section>
+
+  <Faq items={faq.home} />
+  <ContactSection />
+  <VisitUs />
+</Base>
+
+<style>
+  /* Hero — the one big moment on the site */
+  .hero { min-height: min(88vh, 860px); display: grid; align-items: center; padding-block: var(--s-9); color: #fff; }
+  .hero h1 { display: grid; font-size: clamp(4rem, 2.4rem + 8vw, 10rem); line-height: 0.88; }
+  .rotator { display: grid; }
+  .word { grid-area: 1 / 1; opacity: 0; transform: translateY(0.25em); animation: rotate-word 12s infinite; animation-delay: calc(var(--i) * 3s); background: linear-gradient(90deg, #8fa6bd, #fff 60%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
+  @keyframes rotate-word {
+    0% { opacity: 0; transform: translateY(0.25em); }
+    4%, 21% { opacity: 1; transform: none; }
+    25%, 100% { opacity: 0; transform: translateY(-0.25em); }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .word { animation: none; }
+    .word:first-child { opacity: 1; transform: none; }
+  }
+  .hero-brush { width: min(640px, 80%); margin-top: var(--s-4); }
+
+  /* What we do */
+  .intro { display: grid; gap: var(--s-6); margin-bottom: var(--s-8); }
+  @media (min-width: 960px) { .intro { grid-template-columns: 1fr 1.6fr; gap: var(--s-8); } }
+  .intro .lede { color: var(--slate); }
+  .intro .lede strong { color: var(--ink); }
+  .services { display: grid; gap: 0 var(--s-8); grid-template-columns: repeat(auto-fit, minmax(min(100%, 440px), 1fr)); }
+  .service { padding-block: var(--s-6); border-top: 1px solid var(--line); }
+  .service h3 { margin-bottom: var(--s-3); }
+  .service p { color: var(--slate); }
+
+  /* Who we are */
+  .who-photo { aspect-ratio: 4 / 3; }
+  .who h2 { color: #fff; margin-bottom: var(--s-6); }
+  .values p { color: var(--on-dark); }
+  .values strong { color: #fff; }
+
+  /* Home testimonials */
+  .quotes { display: grid; gap: var(--s-6); grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr)); }
+  .quote { display: flex; flex-direction: column; justify-content: space-between; gap: var(--s-5); margin: 0; padding: var(--s-6); background: #fff; border-top: 3px solid var(--blue); border-radius: var(--radius); }
+  .quote blockquote { margin: 0; font-size: 1.05rem; }
+  .quote figcaption { display: flex; align-items: center; gap: var(--s-3); flex-wrap: wrap; font-weight: 600; }
+  .quote .photo { width: 48px; height: 48px; border-radius: 50%; object-fit: cover; }
+  .quote .logo { height: 32px; width: auto; margin-left: auto; opacity: 0.8; }
+</style>

@@ -1,0 +1,78 @@
+---
+import Base from '../layouts/Base.astro';
+import PageHero from '../components/PageHero.astro';
+import Faq from '../components/Faq.astro';
+import Testimonial from '../components/Testimonial.astro';
+import ContactSection from '../components/ContactSection.astro';
+import VisitUs from '../components/VisitUs.astro';
+import faq from '../data/faq.json';
+import pageTestimonials from '../data/page-testimonials.json';
+
+const gallery = [
+  { src: '/images/2025/10/Kite-Media-Website-Design-Digital-Marketing-Services.webp', alt: 'A Kite Media team member at work' },
+  { src: '/images/2024/06/local-search-engine-optimization-utah.webp', alt: 'Kite Media team member doing SEO work' },
+  { src: '/images/2024/10/Kite-Media-Logan-Utah-Marketing-Team.webp', alt: 'The Kite Media office in Logan, Utah' },
+  { src: '/images/2024/10/Website-Designers-in-Utah-Kite-Media.webp', alt: 'Kite Media web designers at work' },
+  { src: '/images/2024/10/Kite-Media-Digital-Marketing-Team-Utah.webp', alt: 'Kite Media digital marketing team' },
+  { src: '/images/2024/10/Kite-Media-Utah-Digital-Marketing-Services.webp', alt: 'A Kite Media team member at work' },
+];
+---
+<Base
+  title="About Kite Media"
+  description="Learn more about Kite Media's services and processes. Call Kite Media today for your digital marketing needs and watch your business' online visibility soar."
+>
+  <PageHero title="About Us" lede="Kite Media is a team of digital marketing specialists dedicated to helping you grow your business." />
+
+  <section class="section">
+    <div class="container split split--wide-left">
+      <div class="media team-photo">
+        <img src="/images/2022/12/Kite-Media-Digital-Marketing-Team.webp" alt="Kite media team standing in front of office building" loading="eager" />
+      </div>
+      <div>
+        <span class="kicker">Kite Media</span>
+        <h2>Who We Are</h2>
+        <div class="prose body">
+          <p>Located in Logan, Utah, we work with small to medium-sized businesses throughout the United States and Canada. We are dedicated to helping service businesses thrive online. Our informational websites and internet marketing campaigns are geared toward increasing online visibility, specifically when your potential customers are searching for your services, with the end goal of sending new customers your way. Our growth as a company is a direct result of consistently helping our clients win online, through long-term partnerships, and a foundation built on reliability. When you partner with us, you get more than a new website or ad campaign; we stay committed to your longterm success.</p>
+          <p>Many companies are effectively utilizing the power of the internet as a key generator of new business and are thus staying relevant, even dominant, in their industries. It's surprising, however, how many small businesses still do not have a solid online presence. The beauty of internet marketing is that there are a variety of options; even for small businesses with limited funds. What we recommend, is that business owners that haven't made the leap online yet, shift funds that are already being allotted to other, less productive forms of advertising to a well thought out internet marketing strategy. Make the shift.</p>
+          <p>We're here to help – not to sell. We only recommend services that we are confident will have a positive impact on your business. The services we provide have a track record of helping small businesses grow and they can do the same for you. Get in touch and let's see if we're a good fit to work together!</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--tight section--mist">
+    <div class="container">
+      <div class="gallery">
+        {gallery.map((g) => <div class="media"><img src={g.src} alt={g.alt} loading="lazy" /></div>)}
+      </div>
+      <div class="btn-row"><a class="btn" href="/our-team/">Meet the team</a></div>
+    </div>
+  </section>
+
+  <Faq items={faq.about} />
+
+  <section class="section section--mist">
+    <div class="container">
+      <div class="heading-block">
+        <h2>What Our Clients Are Saying</h2>
+        <p class="lede muted">Don't just take our word for it - read what a few of the people who have worked with us have to say:</p>
+      </div>
+      <div class="wall">
+        {pageTestimonials['about-us'].map((t) => <Testimonial {...t} />)}
+      </div>
+      <div class="btn-row"><a class="btn" href="/reviews/">Read more reviews</a></div>
+    </div>
+  </section>
+
+  <ContactSection />
+  <VisitUs heading="Visit us" />
+</Base>
+
+<style>
+  .team-photo { aspect-ratio: 4 / 3; }
+  h2 { margin-bottom: var(--s-6); }
+  .body { color: var(--slate); }
+  .gallery { display: grid; gap: var(--s-4); grid-template-columns: repeat(3, 1fr); }
+  .gallery .media { aspect-ratio: 4 / 3; }
+  @media (max-width: 700px) { .gallery { grid-template-columns: repeat(2, 1fr); } }
+</style>

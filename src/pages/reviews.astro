@@ -1,0 +1,44 @@
+---
+import Base from '../layouts/Base.astro';
+import PageHero from '../components/PageHero.astro';
+import Testimonial from '../components/Testimonial.astro';
+import reviews from '../data/reviews.json';
+
+const leave = [
+  { label: 'Leave a review on Google', href: 'https://g.page/r/Camt2qqjX1rfEBM/review' },
+  { label: 'Leave a review on Facebook', href: 'https://www.facebook.com/pg/KiteMedia/reviews/' },
+  { label: 'Leave a review on Yelp', href: 'https://www.yelp.com/biz/kite-media-logan' },
+];
+---
+<Base
+  title="Kite Media Customer Reviews - Small Business Digital Marketing Services"
+  description="We don't sell our services; our clients do a pretty great job of doing that for us. See what they say about our digital marketing services."
+>
+  <PageHero
+    title="Client Reviews"
+    lede="See what people have to say about our digital marketing services and their experience working with our team here at Kite Media. We focus on providing high-quality customer service + legitimate results with no strings attached; our amazing customers can back that up. Our continued growth as a company is a direct result of helping our clients improve their businesses over and over, through long-term partnerships (not long-term contracts), and a foundation built on reliability."
+  />
+
+  <section class="section section--mist">
+    <div class="container">
+      <p class="count muted">{reviews.length} reviews</p>
+      <div class="wall">
+        {reviews.map((r) => <Testimonial {...r} />)}
+      </div>
+    </div>
+  </section>
+
+  <section class="section blueprint feedback">
+    <div class="container">
+      <h2>We would love your feedback!</h2>
+      <div class="btn-row">
+        {leave.map((l) => <a class="btn" href={l.href} target="_blank" rel="noopener">{l.label}</a>)}
+      </div>
+    </div>
+  </section>
+</Base>
+
+<style>
+  .count { margin-bottom: var(--s-5); font-weight: 600; }
+  .feedback h2 { color: #fff; }
+</style>

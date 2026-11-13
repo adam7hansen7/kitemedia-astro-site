@@ -1,0 +1,63 @@
+---
+// "People are searching online for… / Does your business show up?" band,
+// with a search box that types out real local queries.
+interface Props { phrases: string[] }
+const { phrases } = Astro.props;
+---
+<section class="section section--dark typer-band">
+  <div class="container typer-grid">
+    <div>
+      <h2>People are searching online for...</h2>
+      <div class="searchbox" aria-hidden="true">
+        <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7" /><path d="m20 20-3.5-3.5" /></svg>
+        <span class="typed" data-typer data-phrases={JSON.stringify(phrases)}>{phrases[0]}</span><span class="caret"></span>
+      </div>
+      <p class="visually-hidden">For example: {phrases.join(', ')}.</p>
+    </div>
+    <div>
+      <h2>Does your business show up?</h2>
+      <div class="btn-row"><a class="btn" href="#contact">Let's Talk</a></div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .typer-band h2 { font-size: var(--step-3); color: #fff; }
+  .typer-grid { display: grid; gap: var(--s-7); align-items: end; }
+  @media (min-width: 900px) { .typer-grid { grid-template-columns: 1.4fr 1fr; } }
+  .searchbox {
+    display: flex;
+    align-items: center;
+    gap: var(--s-3);
+    margin-top: var(--s-5);
+    padding: var(--s-4) var(--s-5);
+    background: #fff;
+    color: var(--ink);
+    border-radius: 999px;
+    font-size: var(--step-1);
+    min-height: 64px;
+    max-width: 560px;
+  }
+  .searchbox svg { color: var(--slate); flex: none; }
+  .caret { width: 2px; height: 1.2em; background: var(--blue); animation: blink 1s steps(1) infinite; }
+  @keyframes blink { 50% { opacity: 0; } }
+</style>
+
+<script>
+  const el = document.querySelector<HTMLElement>('[data-typer]');
+  const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (el && !reduce) {
+    const phrases: string[] = JSON.parse(el.dataset.phrases || '[]');
+    let i = 0, n = phrases[0].length, deleting = true;
+    const tick = () => {
+      const full = phrases[i];
+      n += deleting ? -1 : 1;
+      el.textContent = full.slice(0, n);
+      let delay = deleting ? 35 : 80;
+      if (!deleting && n === full.length) { deleting = true; delay = 1800; }
+      else if (deleting && n === 0) { deleting = false; i = (i + 1) % phrases.length; delay = 300; }
+      setTimeout(tick, delay);
+    };
+    setTimeout(tick, 1800);
+  }
+</script>

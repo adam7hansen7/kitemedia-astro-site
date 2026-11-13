@@ -1,0 +1,10 @@
+{
+  // Cloudflare Workers (static assets only — no server code needed).
+  // Docs: https://developers.cloudflare.com/workers/framework-guides/web-apps/astro/
+  "name": "kitemedia-astro-site",
+  "compatibility_date": "2026-11-13",
+  "assets": {
+    "directory": "./dist",
+    "not_found_handling": "404-page"
+  }
+}

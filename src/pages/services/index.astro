@@ -1,0 +1,73 @@
+---
+import Base from '../../layouts/Base.astro';
+import PageHero from '../../components/PageHero.astro';
+import ContactSection from '../../components/ContactSection.astro';
+
+const services = [
+  {
+    title: 'Website Design',
+    href: '/services/website-design/',
+    html: 'Kite Media combines functionality with modern web design. A website serves as your digital storefront, and is often the first impression that a potential customer will have of your business - make sure you send a positive message with our <strong>web design service</strong>.',
+  },
+  {
+    title: 'Search Engine Optimization',
+    href: '/services/search-engine-optimization/',
+    html: 'We will help your business establish a powerful online presence through targeted <strong>search engine optimization</strong>. SEO is a process that requires time to produce improved search engine rankings, increased website traffic and ultimately more actions from your customers. The time and effort we put into growing your business online will have longterm benefits.',
+  },
+  {
+    title: 'Pay-Per-Click Management',
+    href: '/services/pay-per-click/',
+    html: 'We create targeted ads with Google Ads that will help you gain new customers and put your website at the top of search rankings. Our <strong>PPC service</strong> is a great boost for a new company, but also helps drive more customers to established businesses.',
+  },
+];
+---
+<Base
+  title="Digital Marketing Services | Kite Media"
+  description="Check out all the digital marketing services we offer and view some of our past work. Get in touch for a quote of our services and see how we can help you!"
+>
+  <PageHero title="Digital Marketing Services" wide>
+    <div class="hero-row">
+      <p class="lede">We provide a variety of proven digital marketing services that work. We help both small and large businesses online by providing legitimate services at some of the industry’s most affordable prices. We don’t push you into services you don’t need, and we don’t keep you locked in with any sort of contract or cancellation fee. See what Kite Media can do for your company.</p>
+      <img class="phone" src="/images/2019/06/iphone-km.webp" alt="Kite Media website shown on a phone" loading="eager" />
+    </div>
+  </PageHero>
+
+  <section class="section">
+    <div class="container">
+      <div class="heading-block"><h2>Our Services</h2></div>
+      <div class="list">
+        {services.map((s) => (
+          <a class="row" href={s.href}>
+            <h3>{s.title}</h3>
+            <p set:html={s.html} />
+            <span class="go" aria-hidden="true">⟶</span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <ContactSection />
+</Base>
+
+<style>
+  .hero-row { display: grid; gap: var(--s-6); align-items: end; }
+  @media (min-width: 900px) { .hero-row { grid-template-columns: 1.4fr 1fr; } }
+  .phone { width: min(280px, 60%); justify-self: center; margin-bottom: calc(-1 * var(--s-9)); }
+  .list { border-top: 1px solid var(--line); }
+  .row {
+    display: grid;
+    gap: var(--s-3) var(--s-7);
+    padding-block: var(--s-6);
+    border-bottom: 1px solid var(--line);
+    color: inherit;
+    text-decoration: none;
+  }
+  @media (min-width: 860px) { .row { grid-template-columns: 1fr 2fr auto; align-items: baseline; } }
+  .row h3 { font-family: var(--font-display); font-size: var(--step-3); font-weight: 400; text-transform: uppercase; line-height: 1; }
+  .row p { color: var(--slate); }
+  .row strong { color: var(--ink); }
+  .go { font-size: 1.75rem; color: var(--blue); transition: transform 160ms ease; }
+  .row:hover h3 { color: var(--blue); }
+  .row:hover .go { transform: translateX(6px); }
+</style>

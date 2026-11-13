@@ -1,0 +1,27 @@
+---
+// A numbered process — this content is a real sequence, so numbers are earned.
+interface Props { steps: { title: string; text: string }[]; heading?: string }
+const { steps, heading = 'Our Process' } = Astro.props;
+---
+<section class="section section--mist">
+  <div class="container">
+    <div class="heading-block"><h2>{heading}</h2></div>
+    <ol class="steps">
+      {steps.map((s, i) => (
+        <li>
+          <span class="num" aria-hidden="true">{String(i + 1).padStart(2, '0')}</span>
+          <h3>{s.title}</h3>
+          <p>{s.text}</p>
+        </li>
+      ))}
+    </ol>
+  </div>
+</section>
+
+<style>
+  .steps { display: grid; gap: var(--s-7) var(--s-6); grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr)); margin: 0; padding: 0; list-style: none; counter-reset: none; }
+  li { position: relative; padding-top: var(--s-5); border-top: 2px solid var(--ink); }
+  .num { display: block; font-family: var(--font-display); font-size: var(--step-4); line-height: 1; background: var(--gradient); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: var(--s-3); }
+  h3 { margin-bottom: var(--s-3); }
+  p { color: var(--slate); }
+</style>

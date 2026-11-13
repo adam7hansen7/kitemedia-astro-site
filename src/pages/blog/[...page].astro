@@ -1,0 +1,42 @@
+---
+import type { GetStaticPaths } from 'astro';
+import { getCollection } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import PageHero from '../../components/PageHero.astro';
+import PostCard from '../../components/PostCard.astro';
+
+export const getStaticPaths = (async ({ paginate }) => {
+  const posts = (await getCollection('blog')).sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+  return paginate(posts, { pageSize: 12 });
+}) satisfies GetStaticPaths;
+
+const { page } = Astro.props;
+const first = page.currentPage === 1;
+---
+<Base
+  title={first ? 'Digital Marketing Blog | Internet Marketing Tutorials - Kite Media' : `Digital Marketing Blog - Page ${page.currentPage} - Kite Media`}
+  description="Check out our internet marketing tutorials and how-to's. Read great tips on pay-per-click advertising and SEO with in-depth explanations and tutorials."
+>
+  <PageHero title="The Kite Media Blog" lede="See what's going on at Kite Media and around the digital marketing world." />
+
+  <section class="section">
+    <div class="container">
+      <div class="posts">
+        {page.data.map((p, i) => (
+          <PostCard slug={p.id} title={p.data.title} date={p.data.date} author={p.data.author} excerpt={p.data.excerpt} image={p.data.featuredImage} alt={p.data.featuredAlt} eager={i < 3} />
+        ))}
+      </div>
+
+      <nav class="pager" aria-label="Blog pages">
+        {page.url.prev ? <a class="btn" href={page.url.prev}>Newer posts</a> : <span />}
+        <span class="muted">Page {page.currentPage} of {page.lastPage}</span>
+        {page.url.next ? <a class="btn" href={page.url.next}>Older posts</a> : <span />}
+      </nav>
+    </div>
+  </section>
+</Base>
+
+<style>
+  .posts { display: grid; gap: var(--s-8) var(--s-6); grid-template-columns: repeat(auto-fill, minmax(min(100%, 320px), 1fr)); }
+  .pager { display: flex; justify-content: space-between; align-items: center; gap: var(--s-4); margin-top: var(--s-9); }
+</style>

@@ -1,0 +1,84 @@
+---
+// Web design price estimator. Same price curve as the original site:
+// $1,895–$2,500 entry level, $2,500–$4,500 most projects, $4,500–$10,000+ advanced.
+const zones = [
+  { zone: 'low', val: 12, label: 'Entry level', desc: 'Fast, basic, one-page site' },
+  { zone: 'mid', val: 57, label: 'Most projects', desc: 'Custom design, multi-page, full build' },
+  { zone: 'high', val: 82, label: 'Advanced work', desc: 'Larger, more advanced projects' },
+];
+---
+<div class="pricing" data-pricing data-zones={JSON.stringify(zones)}>
+  <div class="readout">
+    <div>
+      <p class="zone-label" data-zone-label>Most projects</p>
+      <p class="zone-desc" data-zone-desc>Custom design, multi-page, full build</p>
+    </div>
+    <output class="price" data-price for="price-slider">$3,880</output>
+  </div>
+  <input id="price-slider" type="range" min="0" max="100" step="1" value="51" aria-label="Project size" data-slider />
+  <div class="ticks">
+    {zones.map((z) => (
+      <button type="button" class="tick" data-val={z.val} data-zone={z.zone}>{z.zone === 'high' ? 'Advanced' : z.label}</button>
+    ))}
+  </div>
+</div>
+
+<style>
+  .pricing { padding: var(--s-6); background: var(--midnight); color: #fff; border-radius: var(--radius); }
+  .readout { display: flex; flex-wrap: wrap; align-items: end; justify-content: space-between; gap: var(--s-4); margin-bottom: var(--s-6); }
+  .zone-label { margin: 0; font-size: var(--step-1); font-weight: 700; color: var(--sky); }
+  .zone-desc { margin: 0; color: var(--on-dark-muted); }
+  .price { font-family: var(--font-display); font-size: clamp(3rem, 2rem + 4vw, 4.5rem); line-height: 0.9; font-variant-numeric: tabular-nums; }
+  input[type='range'] {
+    --fill: 51%;
+    width: 100%;
+    height: 8px;
+    appearance: none;
+    -webkit-appearance: none;
+    border-radius: 999px;
+    background: linear-gradient(90deg, var(--blue), var(--sky)) 0 / var(--fill) 100% no-repeat, rgba(255, 255, 255, 0.15);
+    cursor: pointer;
+  }
+  input[type='range']::-webkit-slider-thumb { -webkit-appearance: none; width: 24px; height: 24px; border-radius: 50%; background: #fff; border: 4px solid var(--blue); }
+  input[type='range']::-moz-range-thumb { width: 18px; height: 18px; border-radius: 50%; background: #fff; border: 4px solid var(--blue); }
+  .ticks { position: relative; height: 2.5rem; margin-top: var(--s-3); }
+  .tick { position: absolute; transform: translateX(-50%); padding: var(--s-1) var(--s-2); background: none; border: 0; color: var(--on-dark-muted); font: inherit; font-size: var(--step--1); cursor: pointer; white-space: nowrap; }
+  .tick[data-zone='low'] { left: 12%; }
+  .tick[data-zone='mid'] { left: 57%; }
+  .tick[data-zone='high'] { left: 82%; }
+  .tick.active { color: #fff; font-weight: 700; }
+  @media (max-width: 560px) {
+    .ticks { display: flex; justify-content: space-between; height: auto; }
+    .tick { position: static; transform: none; padding-inline: 0; }
+  }
+</style>
+
+<script>
+  const root = document.querySelector<HTMLElement>('[data-pricing]');
+  if (root) {
+    const zones = JSON.parse(root.dataset.zones!);
+    const slider = root.querySelector<HTMLInputElement>('[data-slider]')!;
+    const price = root.querySelector<HTMLElement>('[data-price]')!;
+    const label = root.querySelector<HTMLElement>('[data-zone-label]')!;
+    const desc = root.querySelector<HTMLElement>('[data-zone-desc]')!;
+    const ticks = root.querySelectorAll<HTMLButtonElement>('.tick');
+    const lerp = (a: number, b: number, t: number) => a + (b - a) * t;
+    const getPrice = (t: number) =>
+      t < 0.25 ? Math.round(lerp(1895, 2500, t / 0.25)) : t < 0.65 ? Math.round(lerp(2500, 4500, (t - 0.25) / 0.4)) : Math.round(lerp(4500, 10000, (t - 0.65) / 0.35));
+    const getZone = (t: number) => (t < 0.25 ? 'low' : t < 0.65 ? 'mid' : 'high');
+    const update = () => {
+      const t = Number(slider.value) / 100;
+      const p = getPrice(t);
+      const z = zones.find((x: { zone: string }) => x.zone === getZone(t));
+      price.textContent = p >= 10000 ? '$10,000+' : '$' + p.toLocaleString('en-US');
+      label.textContent = z.label;
+      desc.textContent = z.desc;
+      slider.style.setProperty('--fill', `${slider.value}%`);
+      slider.setAttribute('aria-valuetext', `${z.label}: ${price.textContent}`);
+      ticks.forEach((tk) => tk.classList.toggle('active', tk.dataset.zone === z.zone));
+    };
+    slider.addEventListener('input', update);
+    ticks.forEach((tk) => tk.addEventListener('click', () => { slider.value = tk.dataset.val!; update(); }));
+    update();
+  }
+</script>

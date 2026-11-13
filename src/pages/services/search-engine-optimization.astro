@@ -1,0 +1,86 @@
+---
+import Base from '../../layouts/Base.astro';
+import PageHero from '../../components/PageHero.astro';
+import SearchTyper from '../../components/SearchTyper.astro';
+import Process from '../../components/Process.astro';
+import Testimonial from '../../components/Testimonial.astro';
+import ContactSection from '../../components/ContactSection.astro';
+import pageTestimonials from '../../data/page-testimonials.json';
+
+const phrases = ['carpet cleaning near me', 'dentist near me', 'plumber near me', 'auto repair near me', 'hair salon near me', 'web designer near me', 'floor refinishing near me', 'home builder near me'];
+
+const help = [
+  { icon: '/images/2024/06/seo-icon-1.svg', title: 'Ranking in Search Results', text: 'Without website optimization, the search engine crawlers don’t know what you offer, and your potential customers can’t find you online. Kite Media will establish your website with great content and constant refreshers.' },
+  { icon: '/images/2024/06/seo-icon-3.svg', title: 'Get on the Maps', text: 'Rank on local apps like Google Maps, Yelp, and other popular mobile search tools. In this day and age of mobile dominance, it’s important to not forget the traffic a well-ranked site will get on mobile devices.' },
+  { icon: '/images/2024/06/seo-icon-2.svg', title: 'Target Specific Areas', text: 'Cater your website and your marketing to specific geographic areas with custom SEO by Kite Media. A website overhaul can really make your site more attractive to search engines and customers.' },
+];
+
+const steps = [
+  { title: 'Step One: Research', text: "We'll research your target market and develop a strategy that appeals to those targets in local search results." },
+  { title: 'Step Two: Build', text: 'We’ll create engaging content to help your site stand out to both visitors and search engines.' },
+  { title: 'Step Three: Evaluate', text: 'In a short time, you’ll see the results of our work and we can evaluate what techniques work to better suit your business needs.' },
+  { title: 'Step Four: Track', text: 'You’ll receive a monthly report explaining both your increase in site traffic and your organic search rankings.' },
+];
+---
+<Base
+  title="Search Engine Optimization Service in Logan, Utah - Kite Media"
+  description="Kite Media is Logan, Utah's top search engine optimization service. We'll improve the visibility of your website on Google. Call 435-753-7553."
+>
+  <PageHero title="Local Search Engine Optimization" lede="It’s no secret that websites that rank at the top of search results get more traffic, and increased traffic typically yields more new customers. If your business isn't visible in search results, you're missing out on customers. It’s pretty simple really.">
+    <div class="btn-row"><a class="btn" href="#contact">Let's Talk</a></div>
+  </PageHero>
+
+  <SearchTyper phrases={phrases} />
+
+  <section class="section">
+    <div class="container">
+      <div class="heading-block"><h2>How Kite Media Can Help</h2></div>
+      <div class="grid grid--3 help">
+        {help.map((h) => (
+          <div>
+            <img src={h.icon} alt="" width="72" height="72" loading="lazy" />
+            <h3>{h.title}</h3>
+            <p>{h.text}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <Process steps={steps} />
+
+  <section class="section">
+    <div class="container split">
+      <div>
+        <h2 class="mb">Start Showing Up In Search Results With SEO</h2>
+        <div class="prose muted-body">
+          <p>Search Engine Optimization is the process of improving the visibility of a website in search engines like Google, Yahoo and Bing, and it is the core of our services at Kite Media. We make sure that your business gets a large exposure online to turn even more followers into committed customers. Even though search engines have become more and more complex, our SEO service helps the engines understand what each page is about, and how it may be helpful for the end user. There is so much that you can do just on your website alone to provide the search engines with a better idea of what services and goods you offer and help you rank higher in their targeted results.</p>
+          <p>To remain competitive online, it's necessary to engage in online marketing strategies and to stay consistent with those strategies. More and more websites each day compete for attention and placement in the rankings. The businesses that have the best understanding of good search engine optimization practices get amplified traffic and a better overall presence. Let the digital marketing experts at Kite Media make you more visible on the web.</p>
+        </div>
+        <div class="btn-row"><a class="btn" href="#contact">Contact Us</a></div>
+      </div>
+      <div class="media tall"><img src="/images/2024/06/local-search-engine-optimization-utah.webp" alt="Spencer, our SEO manager, doing SEO work" loading="lazy" /></div>
+    </div>
+  </section>
+
+  <section class="section section--mist">
+    <div class="container">
+      <div class="heading-block"><h2>Some of our SEO Fans</h2></div>
+      <div class="wall">
+        {pageTestimonials['services_search-engine-optimization'].map((t) => <Testimonial {...t} />)}
+      </div>
+      <div class="btn-row"><a class="btn" href="/reviews/">Read more reviews</a></div>
+    </div>
+  </section>
+
+  <ContactSection variant="call" intro="See your business grow with Kite Media's search engine optimization service. Fill out the form below to contact us!" />
+</Base>
+
+<style>
+  .help img { width: 72px; height: 72px; margin-bottom: var(--s-5); }
+  .help h3 { margin-bottom: var(--s-3); }
+  .help p { color: var(--slate); }
+  .mb { margin-bottom: var(--s-6); }
+  .muted-body { color: var(--slate); }
+  .tall { aspect-ratio: 4 / 5; }
+</style>

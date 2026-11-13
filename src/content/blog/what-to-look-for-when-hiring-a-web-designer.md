@@ -1,0 +1,34 @@
+---
+{
+ "title": "What To Look For When Hiring A Web Designer",
+ "date": "2016-09-23T20:27:15",
+ "modified": "2026-06-26T12:00:39",
+ "author": "Garrett Kite",
+ "categories": [
+  "Website Design"
+ ],
+ "excerpt": "We get it. You’re just a bit apprehensive about hiring someone to design the website that will be the face of your entire business. On top of that, you may be hiring someone you’ve never met in person, and may never actually meet face-to-face. So how do trust someone...",
+ "featuredImage": "/images/2016/09/HiringWebDesigner2.webp",
+ "featuredAlt": "Website design in Logan, Utah",
+ "seoTitle": "What To Look For When Hiring A Web Designer - Kite Media",
+ "description": "In this blog post we've shared 3 important steps to follow when it comes to hiring a web designer for your business."
+}
+---
+<p><img alt="Website design in Logan, Utah" height="404" loading="lazy" src="/images/2016/09/HiringWebDesigner2.webp" width="800"/>We get it. You’re just a bit apprehensive about hiring someone to design the website that will be the face of your entire business. On top of that, you may be hiring someone you’ve never met in person, and may never actually meet face-to-face. So how do trust someone with such a large piece of your business?</p>
+<p>We’ll break it down easy for you with just one word: research. We’ll take you through a few steps to take to make sure you find out everything you need before signing that final agreement. </p>
+<p><b>Step 1:</b> <strong>Check out some of the work they’ve done.</strong> It would be nice to trust a designer when they say they tell you they create the best, most innovative designs around. Let’s be honest though, if you can’t see some of their finished work, you’re taking a HUGE risk going with them. </p>
+<p>Take a look at their portfolio and show it to some friends or coworkers to get a second opinion. Preferably, find someone with a background in web design and ask what they think about the agency or designer. Also, a web designer's business website is usually a pretty good indication of the kind of work they'll be producing. </p>
+<p><b>Step 2:</b><strong> Ask how they will be building your website.</strong> There isn’t necessarily just one right way to build and design a site, but there are definitely some routes we’d advise against.</p>
+<p>Some web design companies will code the entire site from scratch, giving you the ultimate freedom to have the site look and function exactly how you’d like. This is a great way to go, and most large companies have an in-house development team that will build and maintain their website. </p>
+<p>The downside to this method is that you’ll need a web developer at hand anytime you want to change the content on the site, or even if you want to just add an image. This route can get a bit costly, especially when you start throwing maintenance in there. For most small businesses, this route is out of the question due to high prices and technical maintenance.</p>
+<p>Other designers use what’s called a <a href="https://en.wikipedia.org/wiki/Content_management_system">Content Management System, or CMS</a>. This is where <a href="/why-wordpress-is-so-awesome/">WordPress</a> comes in. A CMS is basically a program that you download, and then create the site on the provided framework. The nice thing about it is you download the entire CMS on your hosting account server, and then the designer will have all the access they need to work with and customize the site’s code. </p>
+<p>You can still customize the site exactly as you’d like, and you’ll also be able to manage content when the site is done without having to know how to code. With WordPress you can still build a site from scratch as well, so you can get a completely custom design while maintaining the easy accessibility for ongoing updates and maintenance.</p>
+<p>Although your designer typically isn’t building the site entirely from scratch, they’ll still be making heavy customizations, and will generally still do a fair amount of coding. The difference is that you won’t have to find a web developer every time you want a minor change. Instead, you just login to the dashboard and make the edit.</p>
+<p>Some designers use website builders such as Shopify, Wix, Weebly, BigCommerce or SquareSpace. <a href="http://www.business2community.com/digital-marketing/never-use-website-builder-design-website-01152611#iurqzVuzpyCLQQP2.97">Be hesitant if your designer is using one of these platforms</a> since they won’t have complete control over the website. Also, with these website builders, you won’t actually own the site, the company behind the site will. In addition, in most cases your designer won’t have complete access to the site’s code, making it impossible to make the site exactly how you’d like. This is usually considered the easy way out, and is not generally worth the headaches that will arise.</p>
+<p>In summary, make sure your designer is actually building the site and that they’ll have complete access to all of the backend code. </p>
+<p><b>Step 3:</b><strong> Know a little about pricing.</strong> It’s impossible to put a general price tag on a website, but make sure you know what you’re getting for your money. The amount of custom functionality you require, whether or not you need e-commerce capabilities, and how many pages the site will be can all play a factor in a website.</p>
+<p>Don’t expect to get a well-functioning, custom site with e-commerce included for only $100. A well-designed website that functions properly is going to be a much larger investment. </p>
+<p><em>Note: be skeptical if you’re designer quotes you very low, such as only $150 or so. This may very well mean you’ll be getting a basic out-of-the-box style website with no customization and the designer having no idea how the site even works. There are a lot of ugly websites around the web. This is where many of them are born.</em></p>
+<p>On the other hand, don’t pay an insane amount for a very basic website. If you need a simple website with only a couple of pages and hardly any added functionality, your web designer should be able to work with you on a fairly low price. </p>
+<p>Hopefully this has helped ease the stress of finding a web designer. We’ve built our fair share of websites, and we're happy to help guide you in the right direction. You can check out our updated <a href="/">design portfolio website</a> to see some of our finished projects, as well as the projects we’re currently working on.</p>
+<p><strong>Here at <a href="/services/website-design/">Kite Media</a>, we’re proud to have a team of creative thinkers that combine the perfect balance of design with functionality to build websites at an affordable price. <a href="/contact-us/">Get in touch with us</a> to start on your project today!</strong></p>

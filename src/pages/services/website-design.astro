@@ -1,0 +1,131 @@
+---
+import Base from '../../layouts/Base.astro';
+import PageHero from '../../components/PageHero.astro';
+import Testimonial from '../../components/Testimonial.astro';
+import Process from '../../components/Process.astro';
+import PricingSlider from '../../components/PricingSlider.astro';
+import ProjectCard from '../../components/ProjectCard.astro';
+import ContactSection from '../../components/ContactSection.astro';
+import wd from '../../data/web-design.json';
+import portfolio from '../../data/portfolio.json';
+
+const features = [
+  { title: 'Responsive design', text: 'Your site will be mobile-friendly and will look and function great on smartphones and tablets.' },
+  { title: 'Built-in contact forms', text: 'Customers will never have to leave your site to get in touch.' },
+  { title: 'The perfect blend of design + function', text: "Our web designers have an eye for great design, but we also know the important role that functionality plays in a site's performance. We combine the two to get the ideal mix." },
+  { title: 'Animation', text: 'Add some motion to your site with animated design elements.' },
+  { title: 'Analytics', text: 'Linked website analytics to track visitor data and site progress.' },
+  { title: 'Social media integration', text: 'We can link your site to your Instagram, Pinterest, YouTube, Facebook, & Twitter profiles and make it easy for your customers to connect with you.' },
+];
+
+// Note: this process copy is carried over word-for-word from the live web design page.
+const steps = [
+  { title: 'Step One: Research', text: 'Our team will learn the ins and outs of your business – what you do, how you do it and who your customers are. We then use a variety of tools to research your industry, search trends and the competition. We work to create the most efficient account setup possible.' },
+  { title: 'Step Two: Build', text: 'We’ll discuss your advertising objectives with you and create ad campaigns that are optimized to achieve your goals. This includes ad creation & design, landing page creation, conversion tracking and anything else we need to build to ensure your account is successful.' },
+  { title: 'Step Three: Improve', text: 'A key aspect to any successful PPC campaign is continual testing & improvement. Our pay-per-click service is not a set-it-and-forget-it effort. We continually work to analyze, research, implement, test & tweak to get the most out of your ads and ad spend.' },
+  { title: 'Step Four: Report', text: 'We provide a monthly report that outlines the results of your ad campaigns through detailed metrics and a personalized explanation. In addition, we’re happy to discuss your account personally. We also provide you with direct account access so that you can check in any time.' },
+];
+
+const recent = ['stack-built', 'queensridge-development-companies', 'alison-ann-interiors', 'koerner-law']
+  .map((s) => portfolio.find((p) => p.slug === s)!)
+  .filter(Boolean);
+---
+<Base
+  title="Web Design in Logan, Utah - Kite Media - Logan Web Designer"
+  description="Don't pay for a new website until you call Kite Media in Logan, UT. We specialize in clean web design that is mobile-friendly and functional: 435-753-7553."
+>
+  <PageHero title="Logan, Utah Web Designers">
+    <h2 class="sub">Websites Crafted Around your brand.</h2>
+    <p class="lede">At Kite Media we specialize in building awesome websites that work. We combine design with function to create sites that we’d be proud to call our own. Our forte is designing clean &amp; simple informational sites for all types of businesses on a variety of budgets. Get in touch today and let's see if we’re a good fit for your web design needs.</p>
+    <div class="btn-row"><a class="btn" href="#contact">Let's Talk</a></div>
+  </PageHero>
+
+  <section class="logos-band" aria-label="Some of our web design clients">
+    <div class="container">
+      <ul class="logos">
+        {wd.logos.map((l) => <li><img src={l.src} alt={l.alt} loading="lazy" /></li>)}
+      </ul>
+    </div>
+  </section>
+
+  <section class="section section--tight">
+    <div class="container">
+      <div class="shots">
+        {wd.shots.map((s, i) => <div class:list={['media', 'shot', i === 0 && 'shot--lead']}><img src={s.src} alt={s.alt} loading="lazy" /></div>)}
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="heading-block">
+        <h2>What you get with a website from Kite Media</h2>
+        <p class="lede muted">Our sites include the following features:</p>
+      </div>
+      <div class="features">
+        {features.map((f) => (
+          <div class="feature">
+            <h3>{f.title}</h3>
+            <p>{f.text}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--mist">
+    <div class="container split">
+      <div>
+        <h2 class="cost-heading">What does it cost?</h2>
+        <PricingSlider />
+      </div>
+      <div class="prose muted-body">
+        <p>Our turnaround time is quick, and depending on the size of your project, we can have your new site ready to go in a few weeks. Our pricing is aimed at leaving money in your pocket so that you can afford to drive traffic to your new site. We build clean, stylish, functional websites that will give your business a professional and modern feel. If that's what you're looking for, then get in touch!</p>
+        <p>We aren't always the lowest-priced website design service in Cache Valley, but we do promise to deliver quality websites that work. Our pricing is based on page count + the functionality required for the site. So the more pages you need and/or the more complex the functionality, the higher the price. The only ongoing fees are for the website hosting and any ongoing site maintenance that we provide for you. We build our sites on the WordPress platform, which has a very user-friendly backend that allows our clients to handle the bulk of the site management without having to go through us for routine updates. However, our team will always be around and happy to help with any ongoing website support that you need.</p>
+        <div class="btn-row"><a class="btn" href="#contact">Get Started</a></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="wall">
+        {wd.testimonials.map((t) => <Testimonial {...t} />)}
+      </div>
+    </div>
+  </section>
+
+  <Process steps={steps} />
+
+  <section class="section">
+    <div class="container">
+      <div class="heading-block"><h2>Recent Web Design Work</h2></div>
+      <div class="grid grid--4">
+        {recent.map((p) => <ProjectCard {...p} />)}
+      </div>
+      <div class="btn-row"><a class="btn" href="/portfolio/">See all of our work</a></div>
+    </div>
+  </section>
+
+  <ContactSection variant="call" callHeading="Call Or Text Us" intro="Learn more about our web design service. Fill out the form below to contact us!" />
+</Base>
+
+<style>
+  .sub { font-size: var(--step-3); margin-top: var(--s-6); color: #fff; }
+  .logos-band { background: var(--midnight); padding-block: var(--s-7); border-top: 1px solid var(--line-dark); }
+  .logos { display: grid; grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); gap: var(--s-6) var(--s-7); align-items: center; margin: 0; padding: 0; list-style: none; }
+  .logos li { display: grid; place-items: center; height: 56px; }
+  .logos img { max-height: 56px; max-width: 100%; width: auto; object-fit: contain; filter: brightness(0) invert(1); opacity: 0.75; }
+  .shots { display: grid; gap: var(--s-4); grid-template-columns: repeat(2, 1fr); }
+  @media (min-width: 900px) { .shots { grid-template-columns: 2fr 1fr 1fr; grid-template-rows: auto auto; } .shot--lead { grid-row: span 2; } }
+  .shot { aspect-ratio: 16 / 10; box-shadow: 0 1px 0 var(--line); border: 1px solid var(--line); }
+  .shot--lead { aspect-ratio: auto; }
+  .shot img { object-position: top; }
+  .features { display: grid; gap: var(--s-7) var(--s-8); grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); }
+  .feature { padding-top: var(--s-5); border-top: 2px solid var(--blue); }
+  .feature h3 { margin-bottom: var(--s-3); }
+  .feature p { color: var(--slate); }
+  .cost-heading { margin-bottom: var(--s-6); }
+  .muted-body { color: var(--slate); }
+  .reviews { align-items: stretch; }
+</style>

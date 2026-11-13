@@ -1,0 +1,15 @@
+---
+// Policies are hosted by Termageddon and loaded into the page, same as the WordPress site.
+interface Props { policyKey: string }
+const { policyKey } = Astro.props;
+const url = `https://app.termageddon.com/api/policy/${policyKey}?h-align=left&table-style=accordion`;
+---
+<div id="policy" class="policy prose" data-policy-key={policyKey} data-extra="h-align=left&table-style=accordion">
+  Please wait while the policy is loaded. If it does not load, please <a rel="nofollow noopener" href={url} target="_blank">click here</a>.
+</div>
+<script is:inline src="https://app.termageddon.com/js/termageddon.js"></script>
+
+<style>
+  .policy { max-width: 80ch; }
+  .policy :global(h2), .policy :global(h3) { font-family: var(--font-body); text-transform: none; font-size: var(--step-1); font-weight: 700; margin: var(--s-6) 0 var(--s-3); line-height: 1.3; }
+</style>

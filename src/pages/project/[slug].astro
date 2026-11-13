@@ -1,0 +1,54 @@
+---
+import { getCollection, render } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import PageHero from '../../components/PageHero.astro';
+import ProjectCard from '../../components/ProjectCard.astro';
+import ContactSection from '../../components/ContactSection.astro';
+import portfolio from '../../data/portfolio.json';
+
+export async function getStaticPaths() {
+  const projects = await getCollection('projects');
+  return projects.map((p) => ({ params: { slug: p.id }, props: { project: p } }));
+}
+
+const { project } = Astro.props;
+const { Content } = await render(project);
+const d = project.data;
+const others = portfolio.filter((p) => p.slug !== project.id).slice(0, 8);
+---
+<Base title={d.seoTitle || `${d.title} - Kite Media`} description={d.description} image={d.featuredImage || undefined}>
+  <PageHero title={d.heading} kicker={d.categories.join(', ')} wide>
+    {d.site && <div class="btn-row"><a class="btn" href={d.site} target="_blank" rel="noopener">View Site</a></div>}
+  </PageHero>
+
+  <section class="section">
+    <div class="container split split--wide-left detail">
+      <div class="gallery">
+        {d.gallery.map((src, i) => <img src={src} alt={`${d.title} project image ${i + 1}`} loading={i === 0 ? 'eager' : 'lazy'} />)}
+      </div>
+      <div class="article">
+        <Content />
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--mist">
+    <div class="container">
+      <div class="heading-block"><h2>Take a look at some of our other web design work</h2></div>
+      <div class="grid grid--4">
+        {others.map((p) => <ProjectCard {...p} />)}
+      </div>
+      <div class="btn-row"><a class="btn" href="/portfolio/">See all of our work</a></div>
+    </div>
+  </section>
+
+  <ContactSection />
+</Base>
+
+<style>
+  .detail { align-items: start; }
+  .gallery { display: grid; gap: var(--s-5); }
+  .gallery img { width: 100%; border-radius: var(--radius); border: 1px solid var(--line); }
+  .article :global(h2:first-child) { margin-top: 0; }
+  @media (min-width: 900px) { .article { position: sticky; top: calc(var(--header-h) + var(--s-6)); } }
+</style>

@@ -1,0 +1,61 @@
+---
+// Closing call-to-action used at the bottom of most pages.
+// variant "grow": "Ready to Grow your business?" + form (home, about).
+// variant "call": "Call or text us" + phone + "Or send us a message." + intro line (service pages).
+import ContactForm from './ContactForm.astro';
+import { contact } from '../data/site';
+interface Props { variant?: 'grow' | 'call'; callHeading?: string; intro?: string }
+const { variant = 'grow', callHeading = 'Give us a call or send a text.', intro } = Astro.props;
+---
+<section class="section blueprint contact-section" id="contact">
+  <div class="container">
+    {variant === 'grow' ? (
+      <div class="cta-grow">
+        <div>
+          <h2>Ready to Grow your business?</h2>
+          <p class="call-line">Call/Text: <a href={contact.phoneHref}>{contact.phone}</a></p>
+        </div>
+        <ContactForm />
+      </div>
+    ) : (
+      <div class="split cta-call">
+        <div>
+          <h2 class="call-heading">{callHeading}</h2>
+          <a class="big-phone" href={contact.phoneHref}>{contact.phone}</a>
+          <h2 class="or">Or send us a message.</h2>
+          {intro && <p class="lede">{intro}</p>}
+        </div>
+        <ContactForm />
+      </div>
+    )}
+  </div>
+</section>
+
+<style>
+  .contact-section { color: var(--on-dark); }
+  .contact-section h2 { color: #fff; }
+  .cta-grow { display: grid; gap: var(--s-7); }
+  @media (min-width: 960px) {
+    .cta-grow { grid-template-columns: 0.8fr 1.2fr; align-items: start; }
+  }
+  .call-line { margin-top: var(--s-5); font-size: var(--step-1); }
+  .call-line a { font-family: var(--font-display); font-size: var(--step-3); letter-spacing: 0.02em; text-decoration: none; display: block; color: #fff !important; }
+  .call-line a:hover { color: var(--sky) !important; }
+  .cta-call { align-items: start; }
+  .call-heading { font-size: var(--step-3); }
+  .big-phone {
+    display: inline-block;
+    margin-block: var(--s-3) var(--s-7);
+    font-family: var(--font-display);
+    font-size: var(--step-4);
+    line-height: 1;
+    white-space: nowrap;
+    color: #fff !important;
+    text-decoration: none;
+    background: var(--gradient);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .or { font-size: var(--step-3); margin-bottom: var(--s-4); }
+</style>

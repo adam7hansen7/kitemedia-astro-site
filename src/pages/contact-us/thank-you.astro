@@ -1,0 +1,13 @@
+---
+import Base from '../../layouts/Base.astro';
+import PageHero from '../../components/PageHero.astro';
+import { contact } from '../../data/site';
+---
+<Base title="Thank You - Kite Media" noindex>
+  <PageHero title="Thanks! Your message was sent." wide lede="We'll get back to you soon. If you need us sooner, give us a call.">
+    <div class="btn-row">
+      <a class="btn" href={contact.phoneHref}>Call {contact.phone}</a>
+      <a class="btn" href="/">Back to home</a>
+    </div>
+  </PageHero>
+</Base>

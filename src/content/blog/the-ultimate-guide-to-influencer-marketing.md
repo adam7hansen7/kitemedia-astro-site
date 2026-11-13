@@ -1,0 +1,76 @@
+---
+{
+ "title": "The Ultimate Guide to Influencer Marketing",
+ "date": "2017-09-06T09:00:04",
+ "modified": "2026-06-26T12:00:45",
+ "author": "Kym Merrill",
+ "categories": [
+  "Business Strategy",
+  "Social Media Marketing"
+ ],
+ "excerpt": "In a past life, I was a blogger. Like most bloggers, I received countless pitches from brands wanting to partner with me. I’ve seen it all in terms of pitches; the good, bad, and ugly. Now, I work in digital marketing at Kite Media and I’m the one reaching out to...",
+ "featuredImage": "/images/2017/09/The-Ultimate-Guide-to-Influencer-Outreach-4.webp",
+ "featuredAlt": "",
+ "seoTitle": "The Ultimate Guide to Influencer Marketing - Kite Media",
+ "description": "Here's all of our secrets to getting bloggers and influencers to write about our clients' products, and how you can do it too."
+}
+---
+<p>In a past life, I was a blogger. Like most bloggers, I received countless pitches from brands wanting to partner with me. I’ve seen it all in terms of pitches; the good, bad, and ugly. </p>
+<p>Now, I work in digital marketing at Kite Media and I’m the one reaching out to bloggers asking them to write about my clients' businesses, instead of the other way around. Having been on both sides of the fence, I’ve learned a lot about how to do successful influencer marketing that makes bloggers want to partner with you, and I’m here to share what I’ve learned.</p>
+<h2>What is Influencer Marketing? </h2>
+<p>First things first, though, <a href="https://moz.com/blog/influencer-marketing-what-it-is-and-why-you-need-to-be-doing-it">what is influencer marketing</a>? First, we have to define an influencer. An influencer is someone with a large following, usually on a blog or social media (while we’ll refer to bloggers throughout this post, you can replace that with Instagrammers, YouTubers, etc). Influencer marketing is the process of working with these influencers to help market your brand for you. There are a variety of ways this can happen. In most cases, it will require offering influencers free products/services or other compensation in exchange for promoting your business. </p>
+<p>People tend to trust the information they get from influencers. Nowadays, people skip ads on YouTube only to watch sponsored videos of their favorite influencers talking about products. Most advertising gets filtered out as worthless by customers, but they do listen to influencers. Thus, it can be a great marketing tactic to target these bloggers and have them advertise for you. </p>
+<p>The best way to get the ball rolling on influencer marketing is sending cold emails to bloggers pitching your product and asking them about collaborating, usually in the form of exchanging product for a review or other blog post about your product. There are other forms of influencer marketing, but that is what this post focuses on. </p>
+<p>This all sounds great, right? The problem is that bloggers receive many of these emails every day. Most of them get ignored. Here’s how to get yours to stand out and seal the deal. </p>
+<h2>How to Find Bloggers to Pitch to</h2>
+<p>One of the most time-consuming parts of influencer marketing is finding the influencers. In this instance we’re focusing on bloggers, so if you’re looking for other types of influencers, this method might not work for you. Here are some tips for finding bloggers to pitch to. </p>
+<p><b>Define Your Target Audience.</b>  The first step to finding bloggers is deciding what kind of bloggers you’d like to work with. There are <a href="http://www.bitrebels.com/social/most-popular-blog-categories-google/">so many different blogs</a> out there that there are surely some that are a good fit for your product. You just have to figure out who they are. </p>
+<p>Don’t just limit yourself to bloggers who are a perfect fit. For example, if you sell cleaning products, you don’t only have to pitch to cleaning bloggers. Mom bloggers would also be likely open to your product. Come up with a list of types of bloggers that would be open to your type of product. There are more factors to look into outside of niche, if you’re interested, but niche is a good place to start. </p>
+<p><b>Turn to Pinterest.</b> Pinterest is known as a visual search engine, but you should think of it as a blog search engine. Most bloggers use Pinterest to market their blog posts, so it’s a great place to find bloggers. Utilize the search bar to search for bloggers in the niche you identified. Change the filter from pins to boards. These boards will likely have pins from exactly your target audience. Click through the pins that are related to your subject matter to and you’ll land on blogs that write about subjects similar to your product! </p>
+<p>For example, if you sell lipstick, you might search “Makeup Blogs,” find a board called “My Favorite Makeup Blogs” and click on a pin about a review of lipstick brands. Now you’ve found a blogger who you know already writes about lipstick and would be much more likely to write about your product. </p>
+<p>Repeat this process. You can explore more of Pinterest, such as the related pins, and cast as big of a net as you can. </p>
+<p><b>Keep Track of Your Prospects.</b> If you aren’t immediately sending emails as soon as you find a blog, be sure that you are keeping track of your leads. You don’t want to spend a lot of time researching bloggers only to forget to reach out to them! I like to keep a running spreadsheet. More on that later. </p>
+<p><b>Use Blogs to Find More Bloggers.</b> Once you’ve identified bloggers who might be interested in your product, scour their blog for links to other similar bloggers. A big trend is link-ups, where bloggers share posts from similar bloggers in huge posts that are mostly just links. These link-ups are a gold mine for you. Follow all of the links and you’re sure to discover more bloggers you can pitch to. Also, pay attention to the comments on blog posts. Bloggers will usually leave comments with a link to their own blog, which is another potential pitch for you! </p>
+<p><b>Narrow it Down. </b>What are you looking to get out of influencer marketing? You probably want to put your product in front of potential customers. Maybe you want nice photos of your product you can share, or to just get your name out there. Whatever your goal is, have it in mind when you pitch bloggers. </p>
+<p>The other half of the equation is the blogger’s goals. Most bloggers don’t just want free products or whatever you are willing to offer them. They want to curate content that their audience will appreciate. They aren’t just going to link to anyone, they need a compelling reason to do so. Poke through their blog and try to figure out what their goal might be. </p>
+<p><img alt="when to pitch your product to bloggers" height="438" loading="lazy" src="/images/2017/09/Your-goals-300x211.webp" width="623"/></p>
+<p>If your goals line up with what you hypothesize the blogger’s goals are, you’ve got a great fit! However, if you’re looking to gain customers for your pest control business and the blogger wants to share the latest fashion with her audience, it’s not a good fit and not worth your time. </p>
+<p><b>Focus on Quality, Not Quantity.</b> This brings us to our next point, which is quality, not quantity. You may have been given a quota to fill, or you just want as many features as possible. If that’s the case, it can be tempting to just pitch any and every blogger you can find. However, if you’re just emailing any blogger whose email you can find, you’re not likely to be putting any effort into the pitches. You might even be sending the exact email to several bloggers at a time. These low-effort pitches are likely to get poor results</p>
+<p>On the other hand, taking the time to craft a few high-quality pitches will likely result in more interest from bloggers. They can tell when you’ve put work into a pitch, and it makes them more willing to put effort into working with you. In the end, sending out fewer, higher-quality pitches can result in the same number or even more results than sending lots of bloggers low-quality pitches. </p>
+<h2>Tips for Writing Pitches That Get Responses </h2>
+<p>Once you have a list of bloggers to reach out to, it’s time to write the actual email. Follow these guidelines to write a great blogger collaboration pitch email. </p>
+<p><b>Be Clear. </b>The very worst pitch emails are the one where you have no idea what they are pitching. Be sure to make it very clear what your product is, and how it relates to the blogger. Also, make it clear what you are asking for. If you want a review, let them know. If you are open to different types of posts, let them know that too. You want to provide them with enough information upfront that they understand who you are and what you want from them. </p>
+<p><b>Be Succinct. </b>At the same time, you don’t want to send them a novel. Bloggers are busy people, and they don’t have time to read emails that are hundreds of words long. So they won’t. To ensure your email gets read, keep it as short as you can while still getting your message across. </p>
+<p><b>Personalization.</b> One of the things that makes a high-quality pitch is personalization. It’s always a good idea to show a blogger that you have actually read through their blog and know that your company is a good fit. The first step is to address the blogger by their name. No “dear blogger” or “to whom it may concern.” Bloggers like to be treated like real people. Also, take the time to acknowledge their audience, and why your product is a good fit with them. You can do this by referencing related posts they have written before or even make a generalization based on the way they address their audience and the way their audience interacts with the blog. For instance, you might say something like, “We’ve noticed that your audience is composed of busy, working moms much like yourself. We think that our family planner, designed to help busy moms organize their lives, would really interest your audience” and continue from there. Show them the value of your product to them specifically. </p>
+<p><b>Be professional. </b>You are a professional. The blogger you are reaching out to is also a professional. Be sure to treat them that way. This isn’t to say that you cannot inject a little personality into your correspondence, especially if it fits your brand. However, you do need to make sure that everything is spelled correctly and that you’re using grammar properly. No one will take you seriously if you make typos in your email. On this same note, make sure that you spell the blogger’s name and blog title correctly! Double-check it. It’s insulting to receive an email from someone who can’t even bother to spell your name correctly. </p>
+<p><b>Stay organized.</b> Keep an updated spreadsheet as you send out pitches and receive responses. This spreadsheet should include, at minimum, the URL of the blog, the date you emailed the blog, and whether they have responded. You can include other categories as well (I like to compile the spreadsheet while I’m researching bloggers and include details I’ll need for the pitch, such as their name and email address).</p>
+<p>Why is this important? Nobody wants to get a million pitches from you. You may not remember pitching to them, but they’ll remember pitches from you, especially if they were bad. It’s fine to follow up, but don’t keep sending out completely unrelated pitches. Keep track of who you have already contacted so you don’t keep reaching out to them. This also helps you see who has responded and who you should follow up with. </p>
+<p>Keeping a detailed spreadsheet also gives you the advantage of being to track your results. You can be as detailed as you’d like, and the more data you include, the more useful it will be to you. If you notice that your outreach for a certain campaign is converting poorly, you know to switch up your approach because you’re tracking the numbers. </p>
+<p><b>Follow up. </b>Like most people, bloggers are busy and sometimes an email slips through the cracks. Or they meant to respond but forgot. The best way to handle this is to follow up with them if they haven’t responded after a few days. Send a brief email reminding them who you are and that you’re interested in collaborating. Though <a href="http://blog.close.io/follow-up">advice varies</a>, I recommend only sending one follow-up. No one wants to be bombarded every day with emails. </p>
+<p><b>Keep at it.</b> Ultimately, influencer marketing is a numbers game. While this doesn’t mean that you should pitch everyone in your path, if you only pitch one or two bloggers, you’re not likely to see any results. If you still aren’t getting results after sending several pitches following this advice, change up your pitch. Don’t be afraid to try new things and find which approach works best for your company. </p>
+<p><b>Bonus tip: Build relationships Before Pitching.</b> Bloggers are real people. They are more willing to help out those who they like and have genuine relationships with. That’s why relationship-building is important. Recently, I reached out to a blogger just to tell her that I liked her blog and had featured it in a post. She responded by pitching a collaboration to me! By building a relationship, I was able to get her to do my work for me. Not every outreach will be this fruitful, but it doesn’t hurt to build up a relationship by commenting on posts, sharing links on social media, or just dropping an email to say you admire them. </p>
+<h2>A Checklist for Outreach Success</h2>
+<p>At this point, you might expect me to share a template email, as many posts like this do. However, I think that would be doing a disservice to you. Yes, I do have a boilerplate template that I use for most emails I send. However, its purpose is mostly to make sure that I include all of the important details. I don’t send every blogger the same email, and neither should you. Instead, here’s a basic checklist to help guide you through the process. I hope this is more helpful than a simple template. </p>
+<p>Before Starting the Email: </p>
+<ul>
+<li>Research the blogger. Make sure they are a good fit for you and your product.</li>
+<li>Start a relationship. Maybe comment on their posts, or tweet a link to their blog. </li>
+</ul>
+<p>In the email:</p>
+<ul>
+<li>Use the blogger’s name. Be sure to spell it correctly.</li>
+<li>Make it clear what your product is and what you are asking for.</li>
+<li>Keep it brief. </li>
+<li>Include some personalization. Show that you know that you’ve done your research and are a good fit. </li>
+<li>Spend time on each email. Don’t use a template. </li>
+<li>Proofread your email for typos. Double-check the spelling of the blogger’s name. </li>
+</ul>
+<p>Afterwards:</p>
+<ul>
+<li>Record the details of the outreach in a spreadsheet. </li>
+<li>Follow up if needed. </li>
+</ul>
+<p>This is what has worked best for me. Do you have other tips? We’d love to hear about your experience. And if you’re looking for someone to handle all your digital marketing needs, <a href="/">Kite Media</a> would love to work with you. </p>
+<p>SaveSave</p>
+<p>SaveSave</p>
+<p>SaveSave</p>

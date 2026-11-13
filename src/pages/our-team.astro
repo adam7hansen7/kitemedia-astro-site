@@ -1,0 +1,90 @@
+---
+import Base from '../layouts/Base.astro';
+import PageHero from '../components/PageHero.astro';
+import ContactForm from '../components/ContactForm.astro';
+import team from '../data/team.json';
+---
+<Base
+  title="Meet the team at Kite Media - Utah Digital Marketing Specialists"
+  description="Get to know the team that makes up Kite Media. Let's talk about how we can improve your company's online presence through digital marketing!"
+>
+  <PageHero title="Meet Our Team" />
+
+  <section class="section">
+    <div class="container">
+      <ul class="team">
+        {team.map((m, i) => (
+          <li>
+            <button class="member" type="button" data-open={`bio-${i}`} aria-haspopup="dialog">
+              <span class="photo"><img src={m.photo} alt={`${m.name} - Kite Media`} loading={i < 4 ? 'eager' : 'lazy'} /></span>
+              <span class="name">{m.name}</span>
+              <span class="role">{m.role}</span>
+            </button>
+            <dialog class="bio" id={`bio-${i}`} aria-labelledby={`bio-${i}-name`}>
+              <div class="bio-inner">
+                <form method="dialog"><button class="close" aria-label="Close">×</button></form>
+                <div class="bio-photo"><img src={m.bioPhoto || m.photo} alt={`${m.name} - Kite Media`} loading="lazy" /></div>
+                <div class="bio-text">
+                  <h2 id={`bio-${i}-name`}>{m.name}</h2>
+                  <h3>{m.role}</h3>
+                  {m.bio.map((p) => <p set:html={p} />)}
+                </div>
+              </div>
+            </dialog>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </section>
+
+  <section class="section blueprint join" id="contact">
+    <div class="container split">
+      <div class="prose">
+        <h2>Join us.</h2>
+        <p>We're a small business that prioritizes adding great people to our team. We look for individuals with skills in communication, writing, search engine optimization, website design and paid advertising campaign management.</p>
+        <p>We work primarily with small to medium-sized service businesses, providing website design, search engine optimization and pay-per-click advertising services. The businesses we work with rely on us to be great communicators, problem solvers and detail-oriented marketers that they can trust to take the marketing burden off of their shoulders, and that's exactly what we do. Our ideal team member is hard-working, honest, enjoys working with a team &amp; helping clients.</p>
+        <p>If you think you would be a good fit and would like to explore the opportunity of working with us, send a message using the form below &amp; let's talk.</p>
+      </div>
+      <div>
+        <h2 class="form-heading">Get in Touch</h2>
+        <ContactForm source="/our-team/ (careers)" />
+      </div>
+    </div>
+  </section>
+</Base>
+
+<style>
+  .team { display: grid; gap: var(--s-7) var(--s-5); grid-template-columns: repeat(auto-fill, minmax(min(100%, 220px), 1fr)); margin: 0; padding: 0; list-style: none; }
+  .member { display: flex; flex-direction: column; width: 100%; padding: 0; text-align: left; background: none; border: 0; font: inherit; color: inherit; cursor: pointer; }
+  .photo { display: block; aspect-ratio: 4 / 5; overflow: hidden; border-radius: var(--radius); background: var(--mist); }
+  .photo img { width: 100%; height: 100%; object-fit: cover; transition: transform 300ms ease; }
+  .member:hover .photo img { transform: scale(1.03); }
+  .name { margin-top: var(--s-4); font-family: var(--font-display); font-size: 2rem; line-height: 1; letter-spacing: 0.02em; }
+  .role { margin-top: var(--s-1); font-size: 0.95rem; color: var(--slate); }
+  .member:hover .name { color: var(--blue); }
+
+  .bio { width: min(100% - 2rem, 1000px); max-height: calc(100vh - 2rem); padding: 0; border: 0; border-radius: var(--radius); color: var(--ink); }
+  .bio::backdrop { background: rgba(8, 23, 42, 0.75); }
+  .bio-inner { position: relative; display: grid; }
+  @media (min-width: 760px) { .bio-inner { grid-template-columns: 2fr 3fr; } }
+  .bio-photo img { width: 100%; height: 100%; max-height: 640px; object-fit: cover; }
+  .bio-text { padding: var(--s-7) var(--s-6); }
+  .bio-text h2 { font-size: var(--step-4); }
+  .bio-text h3 { margin-block: var(--s-2) var(--s-5); font-size: var(--step-1); color: var(--blue); }
+  .bio-text p { color: var(--slate); }
+  .close { position: absolute; top: var(--s-3); right: var(--s-3); z-index: 1; width: 44px; height: 44px; font-size: 2rem; line-height: 1; border: 0; border-radius: 50%; background: #fff; color: var(--ink); cursor: pointer; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15); }
+
+  .join { color: var(--on-dark); }
+  .join h2 { color: #fff; }
+  .join .split { align-items: start; }
+  .join .prose h2 { margin-bottom: var(--s-5); }
+  .form-heading { font-size: var(--step-3); margin-bottom: var(--s-5); }
+</style>
+
+<script>
+  document.querySelectorAll<HTMLButtonElement>('[data-open]').forEach((btn) => {
+    const dlg = document.getElementById(btn.dataset.open!) as HTMLDialogElement | null;
+    btn.addEventListener('click', () => dlg?.showModal());
+    dlg?.addEventListener('click', (e) => { if (e.target === dlg) dlg.close(); });
+  });
+</script>

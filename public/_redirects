@@ -1,0 +1,32 @@
+# Old WordPress URLs -> new pages (301 = permanent)
+/services/graphic-design/          /services/   301
+/services/graphic-design           /services/   301
+/services/social-media-marketing/  /services/   301
+/services/social-media-marketing   /services/   301
+/services/content-creation/        /services/   301
+/website-design                    /services/website-design/   301
+/website-design/                   /services/website-design/   301
+/search-engine-optimization        /services/search-engine-optimization/   301
+/search-engine-optimization/       /services/search-engine-optimization/   301
+/pay-per-click                     /services/pay-per-click/   301
+/pay-per-click/                    /services/pay-per-click/   301
+/web-design-portfolio/             /portfolio/   301
+/author/*                          /blog/   301
+/category/*                        /blog/   301
+/tag/*                             /blog/   301
+/feed/                             /blog/   302
+/services/*/thank-you/             /contact-us/thank-you/   301
+/services/email-marketing/         /services/   301
+/services/social-media-management/ /services/   301
+/services/video-production/        /services/   301
+# Location landing pages not rebuilt yet -> nearest service page (302 = temporary)
+/st-george/web-design/             /services/website-design/   302
+/st-george/seo/                    /services/search-engine-optimization/   302
+/st-george/ppc/                    /services/pay-per-click/   302
+/st-george/                        /services/   302
+/idaho-falls/web-design/           /services/website-design/   302
+/idaho-falls/                      /services/   302
+/ogden/                            /services/   302
+/web-design-ogden-utah/            /services/website-design/   302
+/web-design-utah/                  /services/website-design/   302
+/seo-logan-utah/                   /services/search-engine-optimization/   302

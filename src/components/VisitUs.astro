@@ -1,0 +1,25 @@
+---
+import { contact } from '../data/site';
+interface Props { heading?: string }
+const { heading = 'Visit Us' } = Astro.props;
+---
+<section class="section section--tight visit">
+  <div class="container visit-row">
+    <div>
+      <h2>{heading}</h2>
+      <p class="address">{contact.street} {contact.city}</p>
+    </div>
+    <div class="map-links">
+      <a class="btn" href={contact.appleMaps} target="_blank" rel="noopener">Apple Maps</a>
+      <a class="btn" href={contact.googleMaps} target="_blank" rel="noopener">Google Maps</a>
+    </div>
+  </div>
+</section>
+
+<style>
+  .visit { background: var(--mist); }
+  .visit-row { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: var(--s-6); }
+  h2 { font-size: var(--step-3); }
+  .address { margin-top: var(--s-2); font-size: var(--step-1); color: var(--slate); }
+  .map-links { display: flex; flex-wrap: wrap; gap: var(--s-5); }
+</style>

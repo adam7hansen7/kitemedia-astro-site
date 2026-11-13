@@ -1,0 +1,48 @@
+---
+interface Props {
+  quote: string | string[];
+  author?: string;
+  company?: string;
+  companyUrl?: string;
+  position?: string;
+  image?: string;
+}
+const { quote, author, company, companyUrl, position, image } = Astro.props;
+const paras = Array.isArray(quote) ? quote : [quote];
+---
+<figure class="testimonial">
+  <blockquote>
+    {paras.map((p) => <p set:html={p} />)}
+  </blockquote>
+  <figcaption>
+    {image && <img src={image} alt="" width="56" height="56" loading="lazy" />}
+    <span>
+      {author && <strong>{author}</strong>}
+      {position && <span class="muted">{position}</span>}
+      {company && (companyUrl ? <a href={companyUrl} target={companyUrl.startsWith('http') ? '_blank' : undefined} rel="noopener">{company}</a> : <span class="muted">{company}</span>)}
+    </span>
+  </figcaption>
+</figure>
+
+<style>
+  .testimonial {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: var(--s-5);
+    margin: 0;
+    padding: var(--s-6);
+    background: #fff;
+    border: 1px solid var(--line);
+    border-top: 3px solid var(--blue);
+    border-radius: var(--radius);
+    break-inside: avoid;
+  }
+  blockquote { margin: 0; }
+  blockquote p { margin: 0; }
+  blockquote p + p { margin-top: var(--s-3); }
+  figcaption { display: flex; align-items: center; gap: var(--s-4); font-size: 0.95rem; line-height: 1.4; }
+  figcaption > span { display: flex; flex-direction: column; }
+  img { width: 56px; height: 56px; object-fit: cover; border-radius: 50%; flex: none; }
+  a { font-weight: 500; }
+</style>

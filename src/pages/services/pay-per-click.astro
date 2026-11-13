@@ -1,0 +1,136 @@
+---
+import Base from '../../layouts/Base.astro';
+import PageHero from '../../components/PageHero.astro';
+import SearchTyper from '../../components/SearchTyper.astro';
+import Process from '../../components/Process.astro';
+import Testimonial from '../../components/Testimonial.astro';
+import ContactSection from '../../components/ContactSection.astro';
+import pageTestimonials from '../../data/page-testimonials.json';
+import { contact } from '../../data/site';
+
+const phrases = ['carpet cleaning near me', 'dentist near me', 'hvac near me', 'auto repair near me', 'hair salon near me', 'floor refinishing near me', 'home builder near me'];
+
+const pillars = [
+  { title: 'COMPLETE SETUP', text: 'With over 15 years of combined pay-per-click advertising experience and more than 200 clients served, we’ve learned what it takes to create a successful campaign. We pay attention to detail when it comes to ad targeting, scheduling, A/B testing, conversion & call tracking, and custom landing page creation. We understand that successful PPC campaigns are about more than just the ads themselves, which is why we also make sure your website is ready to convert traffic into sales. We are pros in search, display, remarketing, YouTube and shopping ads and work with a wide range of budgets – large and small.' },
+  { title: 'ONGOING WORK', text: 'We work tirelessly to test, tweak and improve by making continual updates to ad text, ad design, bids, keyword targeting and audience targeting. Pay-per-click advertising is not and should not be treated as a set-it-and-forget-it type of advertising. Ongoing work is required to get the most out of your ad campaigns. With Kite Media, your ads will be managed on a daily basis with continual A/B testing to ensure you are achieving the highest ROI possible. We work within your budget to optimize your ad campaigns for the actions you want, whether that be increased phone calls, contact form submissions, purchases or sign-ups.' },
+  { title: 'MOBILE DOMINANCE', text: 'Do a Google search for your product or service from a mobile device and you will see that the majority of the search results page is made up of paid ads. For most search results, your entire screen and the initial scroll will be comprised of these ads. Even if your website ranks first organically (the results below the ads) a person will have to scroll several times to get past the paid ads to find you. Unless a potential customer is looking for your business by name, the odds of them scrolling all the way down to the organic results are slim. Utilize PPC to make your website stand out to customers who are searching from their mobile devices.' },
+  { title: 'QUICK TURNAROUND', text: 'Unlike other digital marketing methods that may take months or more to deliver quantifiable results, pay-per-click advertising provides an opportunity to generate new business with quick turnaround times and trackable results. Whether you’re new to PPC, have been managing it on your own or are looking to make a switch from your current PPC provider, our team will help you achieve a greater return-on-investment by putting our tried & tested setup and optimization techniques to work. We’ll provide highly accurate tracking information based on the actions that matter most to you and focusing on your return on investment.' },
+];
+
+const steps = [
+  { title: 'Step One: Research', text: 'Our team will learn the ins and outs of your business – what you do, how you do it and who your customers are. We then use a variety of tools to research your industry, search trends and the competition. We work to create the most efficient account setup possible.' },
+  { title: 'Step Two: Build', text: 'We’ll discuss your advertising objectives with you and create ad campaigns that are optimized to achieve your goals. This includes ad creation & design, landing page creation, conversion tracking and anything else we need to build to ensure your account is successful.' },
+  { title: 'Step Three: Improve', text: 'A key aspect to any successful PPC campaign is continual testing & improvement. Our pay-per-click service is not a set-it-and-forget-it effort. We continually work to analyze, research, implement, test & tweak to get the most out of your ads and ad spend.' },
+  { title: 'Step Four: Report', text: 'We provide a monthly report that outlines the results of your ad campaigns through detailed metrics and a personalized explanation. In addition, we’re happy to discuss your account personally. We also provide you with direct account access so that you can check in any time.' },
+];
+---
+<Base
+  title="Pay-Per-Click Advertising - PPC Service | Kite Media"
+  description="Pay-Per-Click advertising is one of the best internet marketing solutions available. PPC provides high returns with quick turnaround times."
+>
+  <PageHero title="Pay-Per-Click" lede="We provide small businesses with the ability to advertise their services in Google search results through Pay-Per-Click (PPC) advertising. You choose a geographic area where you want your ads to appear and we make sure that your ads are seen at the local level.">
+    <div class="btn-row"><a class="btn" href="#contact">Let's talk</a></div>
+  </PageHero>
+
+  <SearchTyper phrases={phrases} />
+
+  <section class="section">
+    <div class="container">
+      <div class="pillars-top">
+        <img class="setup-img" src="/images/2019/06/PPC-setup-1.webp" alt="Utah pay per click service" loading="lazy" />
+      </div>
+      <div class="grid grid--2 pillars">
+        {pillars.map((p) => (
+          <div>
+            <h2 class="pillar-title">{p.title}</h2>
+            <p>{p.text}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <Process steps={steps} />
+
+  <section class="section">
+    <div class="container split">
+      <div>
+        <h2 class="mb">So How Does PPC Work?</h2>
+        <div class="prose muted-body">
+          <p>Pay-Per-Click involves creating ads, both text-based and image/banner ads, through programs such as Google Ads. These ads will then appear online based on specific search terms and interests of users. Your ad can appear whenever someone searches for criteria matching your keywords.</p>
+          <p>You’ll start seeing your PPC ads immediately and they can be easily tracked – even better, you only pay for the ads that get clicks. We will help you understand what your potential customers and clients are searching for online, enabling us to shape your ads and promotions to provide the greatest return on investment. We monitor and update your ads to make sure you’re never overspending and that you’re getting the most value out of the service.</p>
+          <p>This process can seem overwhelming, but it is essential to the success of any business. Let us take the complication out of reaching your online customers by creating and managing your targeted PPC campaigns.</p>
+        </div>
+        <div class="btn-row"><a class="btn" href="#contact">Let's talk</a></div>
+      </div>
+      <img class="phone-mock" src="/images/2019/11/ppc-iphone-mock.webp" alt="Mobile phone showing google search results page and paid ads" loading="lazy" />
+    </div>
+  </section>
+
+  <section class="section section--dark">
+    <div class="container split">
+      <div>
+        <h2 class="mb">Google Ads Certified</h2>
+        <div class="prose">
+          <p>We are a <a href={contact.googlePartner} target="_blank" rel="noopener">Google certified partner</a> – meaning we have a proven track record of showing both Google and our clients that we’re experts when it comes to pay-per-click advertising.</p>
+          <p>In order to achieve partner status, we have to pass exams, maintain high advertising standards and continually stay on top of current best practices and policies.</p>
+        </div>
+      </div>
+      <a class="badge" href={contact.googlePartner} target="_blank" rel="noopener">
+        <img src="https://www.gstatic.com/partners/badge/images/2021/PartnerBadgeClickable.svg" alt="Google Partner badge" width="180" height="170" loading="lazy" />
+      </a>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="split lsa">
+        <div>
+          <h2 class="mb">Google Local Service Ads</h2>
+          <div class="prose muted-body">
+            <p>Google has recently come out with a new type of ad that shows up at the very top of the search results. They are called Google Local Service ads, sometimes referred to Google Guaranteed or Google Verified ads. Google Local Services ads help you connect with people who search on Google for the services you offer, similar to Pay-Per-Click. Your ads will show up for customers in your area, and you only pay if a customer contacts you directly through the ad. You can set a weekly budget, the zip codes you want to show up in, and what time of day these ads run. Each lead is tracked by Google, so you can accurately know how effective these ads are for your business.</p>
+          </div>
+        </div>
+        <div class="media"><img src="/images/2024/01/LSA-screenshot-2.webp" alt="Screenshot of Google's Local Service Ads showing ads for carpet cleaning in San Diego" loading="lazy" /></div>
+      </div>
+      <div class="prose muted-body lsa-more">
+        <p>These are the current industries and job categories that Google is running these new ads for: acupuncture, allergist, animal rescue services, appliance repair, auto body shop, barber shop, beauty school, car washing and detailing, carpentry, carpet cleaning, cellphone and laptop repair, chiropractic services, countertop services, dance instruction, dentistry, dermatology, dietitian, driving instruction, electrical, fencing, financial planning, first aid training, flooring, foundations, funeral services, garage door, general contracting, hair removal, hair salon, handyman, home inspection, home security services, home theater services, house cleaning, HVAC, insurance agency, junk removal provider, landscaping, language instruction, law services, lawn care, locksmith, massage school, moving services, nail salon, ophthalmology, optometrist, orthodontist, personal training, pest control, pet adoption, pet boarding, pet grooming, pet training, physical therapy, piercing studio, plumber, podiatry, pool cleaning, pool contractor, preschool, primary care physician, real estate, roofing, sewage system services, siding, snow removal services, solar energy contractor, storage, tattoo studio, tax services, tire shop, tree services, tutoring, veterinary services, water damage services, weight loss services, window cleaning, window services, and yoga. The availability for these ads is limited by geographic area. Google is rolling out this program over time. The best way for you to know if they are available is go to Google and search!</p>
+        <p>Our team is experienced in getting these ads setup and optimized to get the best results possible. Get in touch with Kite Media to learn more about these ads and how we can help.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--mist">
+    <div class="container">
+      <h2 class="mb">ClickCease™ Fraudulent Click Protection</h2>
+      <div class="prose muted-body">
+        <p>One of the biggest concerns people have with Google Pay-Per-Click Ads is fraudulent clicks. These are clicks from a malicious source such as a competitor, bot, or even an industrial click farm that are used to run up your budget. The team here at Kite Media deploys ClickCease to combat fraudulent clicks. This revolutionary software will track the IP addresses of these evil clickers and add them to your Google Ads exclusion click in real-time to block them for good. Learn more about ClickCease by giving us a call or <a href="https://www.clickcease.com/" target="_blank" rel="noopener">checking out their website</a>.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="heading-block"><h2>Some of our PPC Fans</h2></div>
+      <div class="wall">
+        {pageTestimonials['services_pay-per-click'].map((t) => <Testimonial {...t} />)}
+      </div>
+      <div class="btn-row"><a class="btn" href="/reviews/">Read more reviews</a></div>
+    </div>
+  </section>
+
+  <ContactSection variant="call" intro="See your business grow with Kite Media's PPC program. Fill out the form below to contact us!" />
+</Base>
+
+<style>
+  .mb { margin-bottom: var(--s-6); }
+  .muted-body { color: var(--slate); }
+  .pillars-top { display: flex; justify-content: center; margin-bottom: var(--s-8); }
+  .setup-img { width: min(100%, 760px); }
+  .pillar-title { font-size: var(--step-3); margin-bottom: var(--s-4); }
+  .pillars p { color: var(--slate); }
+  .phone-mock { width: min(100%, 360px); justify-self: center; }
+  .badge { justify-self: center; }
+  .badge img { width: 200px; height: auto; background: #fff; border-radius: var(--radius); padding: var(--s-3); }
+  .lsa { margin-bottom: var(--s-7); }
+</style>
